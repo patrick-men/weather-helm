@@ -1,0 +1,136 @@
+<!--state 30.06.23-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+    <style>
+      .navbar-nav > li >a{
+        color:black;
+      }
+
+      .navbar >a{
+        color:black;
+      }
+
+      h1 {
+          text-align: center;
+      }
+
+      .row {
+          display: flex;
+          align-items: center;
+      }
+  
+      .row .description {
+          align-content: center;
+      }
+
+      body{
+        background-image: url('https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif');
+        background-size: cover;
+        height: 100vh;
+        padding:0;
+        margin:0;
+      }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-tranparent">
+        <a class="navbar-brand" href="localhost:80">Image Gallery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="showTempOrWind('block', 'none')">Temperature <span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#" onclick="showTempOrWind('none', 'block')">Wind <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <p>ඞ</p>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <h1>Current Weather Forecast Bern</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div id="temp">
+                <h2>Temperature</h2>
+            </div>
+            <div id="temp_descr" class="description"></div>
+        </div>
+
+        <div id="hr"></div>
+
+        <div class="row">
+            <div id="wind">
+                <h2>Wind</h2>
+            </div>
+            <div id="wind_descr" class="description"></div>
+        </div>
+
+        <br><br><br>
+    </div>
+
+    <script>
+        // Add in here all the img you wanna render through an img tag [(id name): [(src), (alt)]]
+        var data = {
+            temp: ["temperature.png", "Temperature Plot"],
+            temp_descr: ["temperature_description.png", "Temperature Description"],
+            wind: ["wind.png", "Wind Plot"],
+            wind_descr: ["wind_description.png", "Wind Description"]
+        };
+
+        Object.keys(data).forEach(function (div) {
+            var createDiv = document.getElementById(div);
+
+            // Create a container div for each set of images
+            var containerDiv = document.createElement("div");
+            createDiv.appendChild(containerDiv);
+
+            var img = document.createElement("img");
+            img.src = data[div][0];
+            img.alt = data[div][1];
+            containerDiv.appendChild(img);
+        });
+
+        function showTempOrWind(temp, wind) {
+          var tempDiv = document.getElementById("temp");
+          var tempDescrDiv = document.getElementById("temp_descr");
+          var hr = document.getElementById("hr");
+          var windDiv = document.getElementById("wind");
+          var windDescrDiv = document.getElementById("wind_descr");
+
+          tempDiv.style.display = temp;
+          tempDescrDiv.style.display = temp;
+          hr.style.display = 'none';
+          windDiv.style.display = wind;
+          windDescrDiv.style.display = wind;
+        }
+
+        document.getElementById("hr")
+          .appendChild(
+            document.createElement("div")
+            .appendChild(
+              document.createElement("hr")
+            )
+          );
+    </script>
+</body>
+</html>
