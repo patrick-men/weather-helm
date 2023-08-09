@@ -140,7 +140,7 @@ if response.status_code == 200:
 plt.plot(timestamps, temp)
 plt.xlabel("Time")
 plt.ylabel("Temperature")
-plt.title(f"Temperature in {values_city")
+plt.title(f"Temperature in {values_city}")
 plt.savefig("/shared-data/temperature.png")
 
 plt.clf()
