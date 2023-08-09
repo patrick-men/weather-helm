@@ -15,8 +15,8 @@ values_city = os.environ.get("WEATHER_CITY")
 
 #get weather from openweather
 base_url = "https://api.openweathermap.org/data/2.5/forecast?"
-city = f"{values-city}"
-api_key = f"{values-api}"
+city = f"{values_city}"
+api_key = f"{values_api}"
 
 #set proper url
 url = base_url + "q=" + city + "&appid=" + api_key
@@ -140,7 +140,7 @@ if response.status_code == 200:
 plt.plot(timestamps, temp)
 plt.xlabel("Time")
 plt.ylabel("Temperature")
-plt.title("Temperature in Bern")
+plt.title(f"Temperature in {values_city")
 plt.savefig("/shared-data/temperature.png")
 
 plt.clf()
@@ -172,7 +172,7 @@ img.save('/shared-data/temperature_description.png')
 plt.plot(timestamps, wind)
 plt.xlabel("Time")
 plt.ylabel("Wind Speeds")
-plt.title("Wind in Bern")
+plt.title(f"Wind in {values_city}")
 plt.savefig("/shared-data/wind.png")
 
 # wind description
