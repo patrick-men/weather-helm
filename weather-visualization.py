@@ -141,7 +141,7 @@ plt.plot(timestamps, temp)
 plt.xlabel("Time")
 plt.ylabel("Temperature")
 plt.title(f"Temperature in {values_city}")
-plt.savefig("/shared-data/temperature.png")
+plt.savefig("/pics/temperature.png")
 
 plt.clf()
 
@@ -164,7 +164,7 @@ imgDraw = ImageDraw.Draw(img)
 
 imgDraw.text((10, 10), message, fill=(0,0,0))
 
-img.save('/shared-data/temperature_description.png')
+img.save('/pics/temperature_description.png')
 
 
 # wind visualization
@@ -173,7 +173,7 @@ plt.plot(timestamps, wind)
 plt.xlabel("Time")
 plt.ylabel("Wind Speeds")
 plt.title(f"Wind in {values_city}")
-plt.savefig("/shared-data/wind.png")
+plt.savefig("/pics/wind.png")
 
 # wind description
 
@@ -194,7 +194,7 @@ imgDraw = ImageDraw.Draw(img)
 
 imgDraw.text((10, 10), message, fill=(0,0,0))
 
-img.save('/shared-data/wind_description.png')
+img.save('/pics/wind_description.png')
 
 # icon
 
@@ -215,4 +215,4 @@ imgDraw = ImageDraw.Draw(img)
 
 imgDraw.text((10, 10), message, fill=(0,0,0))
 
-img.save('/shared-data/weather_description.png')
+img.save('/pics/weather_description.png')
