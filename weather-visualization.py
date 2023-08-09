@@ -8,8 +8,8 @@ import os
 
 #get the valies.yaml values
 
-values-api = os.environ.get("WEATHER_API_KEY")
-values-city = os.environ.get("WEATHER_CITY")
+values_api = os.environ.get("WEATHER_API_KEY")
+values_city = os.environ.get("WEATHER_CITY")
 
 
 
