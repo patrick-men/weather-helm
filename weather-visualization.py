@@ -140,7 +140,9 @@ if response.status_code == 200:
     wind = [first_w, second_w, third_w, fourth_w, fifth_w, sixth_w, seventh_w, eighth_w]
     timestamps = [first_time, second_time, third_time, fourth_time, fifth_time, sixth_time, seventh_time, eighth_time]
 
-
+else:
+    print("API call failed")
+    sys.exit(0)
 # temperature visualization
 
 plt.plot(timestamps, temp)
