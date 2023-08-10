@@ -23,6 +23,8 @@ url = base_url + "q=" + city + "&appid=" + api_key
 #http request
 response = requests.get(url)
 
+print(url)
+
 
 
 
