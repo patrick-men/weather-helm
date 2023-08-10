@@ -142,7 +142,7 @@ if response.status_code == 200:
 
 else:
     print("API call failed")
-    sys.exit(0)
+    exit()
 # temperature visualization
 
 plt.plot(timestamps, temp)
