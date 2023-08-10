@@ -27,9 +27,6 @@ url.replace("\n", "")
 #http request
 response = requests.get(url)
 
-print(url)
-
-
 
 
 # Program start
