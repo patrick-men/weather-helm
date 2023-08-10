@@ -20,6 +20,10 @@ api_key = f"{values_api}"
 
 #set proper url
 url = base_url + "q=" + city + "&appid=" + api_key
+
+#url sometimes breaks - this fixes it
+url.replace("\n", "")
+
 #http request
 response = requests.get(url)
 
